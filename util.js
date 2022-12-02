@@ -56,7 +56,7 @@ export async function importer(year, day) {
       headers: { Cookie: `session=${session}` },
       credentials: 'include'
     });
-    return await res.text();
+    return await (await res.text()).trim();
   } catch (error) {
     console.error(error);
   }
