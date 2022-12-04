@@ -14,7 +14,11 @@ const getOutput = (input) => {
 }
 
 const testOutput = getOutput(contents('year/day/test.txt'));
-console.log(`------ Test -------\n${testOutput}\n--- Test Answer ---\n${testAnswer}\n------ Final ------`);
+console.log(`------ Test -------`);
+console.log(testOutput);
+console.log(`--- Test Answer ---`);
+console.log(testAnswer);
+console.log(`------ Final ------`);
 
 if (testOutput === testAnswer) {
   const output = getOutput(contents('year/day/input.txt'));
