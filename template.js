@@ -1,4 +1,5 @@
 import { contents, submit } from "../../util.js";
+import _ from "lodash";
 Array.prototype.sum = function () {
   return this.reduce((a, b) => a + b, 0);
 };
@@ -7,7 +8,7 @@ const testAnswer = ""
 
 const getOutput = (input) => {
   const output = input
-    .split("\n");
+    .split("\n")
 
   return output;
 }
