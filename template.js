@@ -18,10 +18,10 @@ console.log(`------ Test -------`);
 console.log(testOutput);
 console.log(`--- Test Answer ---`);
 console.log(testAnswer);
-console.log(`------ Final ------`);
 
 if (testOutput === testAnswer) {
   const output = getOutput(contents('year/day/input.txt'));
+  console.log(`------ Final ------`);
   console.log(output);
   console.log(await submit(year, day, output, 1)) // Change last parameter to 2 for part 2
 }
