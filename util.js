@@ -1,10 +1,9 @@
-import dotenv from 'dotenv';
-dotenv.config();
-const session = process.env.SESSION;
-
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
+import { config } from 'dotenv';
+config();
+const session = process.env.SESSION;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -48,7 +47,7 @@ export async function submit(year, day, answer, level) {
  * @param {number} day 
  * @returns 
  */
-export async function importer(year, day) {
+export async function importer(year, day,) {
   try {
     const url = `https://adventofcode.com/${year}/day/${day}/input`;
     const res = await fetch(url, {

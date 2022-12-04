@@ -1,14 +1,22 @@
 import { contents, submit } from "../../util.js";
+Array.prototype.sum = function () {
+  return this.reduce((a, b) => a + b, 0);
+};
 
-try {
-  const output = contents('/year/day/input.txt')
+const testAnswer = ""
+
+const getOutput = (input) => {
+  const output = input
     .split("\n");
 
-  let answer = output;
+  return output;
+}
 
-  console.log(answer);
+const testOutput = getOutput(contents('year/day/test.txt'));
+console.log(`------ Test -------\n${testOutput}\n--- Test Answer ---\n${testAnswer}\n------ Final ------`);
 
-  // console.log(await submit(year, day, answer, 1)) // Change last parameter to 2 for part 2
-} catch (error) {
-  console.error(error);
+if (testOutput === testAnswer) {
+  const output = getOutput(contents('year/day/input.txt'));
+  console.log(output);
+  console.log(await submit(year, day, output, 1)) // Change last parameter to 2 for part 2
 }
